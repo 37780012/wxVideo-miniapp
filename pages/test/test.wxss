@@ -1,0 +1,572 @@
+/* pages/index/index.wxss */
+
+page {
+
+    width: 100%;
+
+    height: 100%;
+
+    background: #000;
+
+}
+
+swiper,
+swiper-item {
+
+    width: 100%;
+
+    height: 900rpx;
+
+}
+
+.videoCon,
+video {
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+}
+
+.videoCon {
+
+    margin-top: 130rpx;
+
+}
+
+.navBtns {
+
+    padding-top: 65rpx;
+
+    padding-left: 20rpx;
+
+    position: fixed;
+
+    top: 0rpx;
+
+    height: 150rpx;
+
+    z-index: 999;
+
+    width: 100%;
+
+}
+
+.navBtns .typeButton {
+
+    background: rgba(255, 255, 255, 0.5);
+
+    display: inline-block;
+
+    font-size: 14px;
+
+    line-height: 25px;
+
+    width: 40px;
+
+    height: 25px;
+
+    margin: 2px 5px;
+
+    border-radius: 5px;
+
+    text-align: center;
+
+    margin-bottom: 10rpx;
+
+}
+
+.navBtns .typeButton.active {
+
+    background: #d82539;
+
+    color: #fff;
+
+}
+
+.colorBtns .colorbutton {
+
+    display: inline-block;
+
+    background: none;
+
+    color: rgb(36, 36, 36);
+
+    /* border: 1px solid #fff; */
+
+    box-shadow: none;
+
+    outline: none;
+
+    font-size: 24rpx;
+
+    /* padding: 5rpx 8rpx; */
+
+    padding: 3rpx;
+
+    border-radius: 10rpx;
+
+    margin: 5px 5px;
+
+    line-height: 30rpx;
+
+    border: 1px solid #fff;
+
+    background: rgba(235, 235, 235, 0.5);
+
+    text-align: center;
+
+}
+
+.colorBtns .colorbutton.active {
+
+    background: none;
+
+    border: 1px solid #ffffff;
+
+    background: rgba(207, 206, 206, 0.5);
+
+    background: #d82539;
+
+    color: #fff;
+
+}
+
+.colorBtns .colorbutton::after,
+.colorbutton .button::before {
+
+    border: none;
+
+}
+
+.detailRightCon {
+
+    float: right;
+
+    margin-right: 10rpx;
+
+    width: 80rpx;
+
+    height: 220rpx;
+
+    overflow: hidden;
+
+}
+
+.loveCon {
+
+    width: 180rpx;
+
+    height: 60rpx;
+
+}
+
+.loveCon.active {
+
+    margin-left: -80rpx;
+
+}
+
+.loveCon cover-image {
+
+    float: left;
+
+    width: 80rpx;
+
+    height: 60rpx;
+
+}
+
+.shareNum,
+.loveNum {
+
+    clear: both;
+
+    color: #fff;
+
+    font-size: 30rpx;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    padding-right: 5rpx;
+
+}
+
+.shareCon {
+
+    height: 60rpx;
+
+    margin-top: 20rpx;
+
+    position: relative;
+
+}
+
+.shareCon cover-image {
+
+    width: 77rpx;
+
+    height: 62rpx;
+
+}
+
+.shareNum {
+
+    display: block;
+
+    height: 50rpx;
+
+}
+
+.detailLeft {
+
+    float: left;
+
+    margin-top: 50rpx;
+
+    margin-bottom: 40rpx;
+
+}
+
+.detailRight {
+
+    float: right;
+
+}
+
+.catCon {
+
+    font-size: 28rpx;
+
+    color: #fff;
+
+    padding-left: 30rpx;
+
+}
+
+.clear {
+
+    clear: both;
+
+}
+
+.catCon button {
+
+    display: inline-block;
+
+    background: none;
+
+    padding: 0px;
+
+    font-size: 28rpx;
+
+    color: #fff;
+
+    line-height: 30rpx;
+
+    border-radius: 0rpx;
+
+    border: 0rpx;
+
+}
+
+.catCon button::after {
+
+    border: none;
+
+}
+
+.catCon {
+
+    margin-bottom: 10rpx;
+
+}
+
+.catCon>cover-view {
+
+    padding-left: 0rpx;
+
+}
+
+.reserve {
+
+    font-size: 28rpx;
+
+    background: #f3243b;
+
+    color: #fff;
+
+    margin-left: 30rpx;
+
+    margin-top: 40rpx;
+
+}
+
+.sold {
+
+    font-size: 28rpx;
+
+    background: #ccc;
+
+    color: #fff;
+
+    margin-left: 30rpx;
+
+    margin-top: 40rpx;
+
+}
+
+.detail {
+
+    width: 100%;
+
+    position: fixed;
+
+    left: 0rpx;
+
+    bottom: -2rpx;
+
+    height: 360rpx;
+
+}
+
+.bottom button {
+
+    width: 50%;
+
+    height: 80rpx;
+
+    line-height: 80rpx;
+
+    text-align: center;
+
+    background: none;
+
+    color: #ccc;
+
+    float: left;
+
+    font-size: 30rpx;
+
+    border-radius: 0rpx;
+
+    border-left: 0rpx;
+
+    border-right: 0rpx;
+
+    border: none;
+
+}
+
+.bottom button::after {
+
+    border: none;
+
+    border-radius: 0rpx;
+
+    /* border-top: 1rpx solid #fff; */
+
+}
+
+.bottom button.active {
+
+    /* border-right: 1rpx solid rgba(0, 0, 0, 0.1); */
+
+    border-bottom: 2rpx solid #d82539;
+
+    font-weight: bold;
+
+    color: #d82539;
+
+
+
+}
+
+.shareBtn,
+.shareBtn::after {
+
+    background: none;
+
+    display: block;
+
+    border: none;
+
+    outline: none;
+
+    height: 120rpx;
+
+    width: 90rpx;
+
+    line-height: 300rpx;
+
+    position: absolute;
+
+    z-index: 999;
+
+    top: 0rpx;
+
+}
+
+.shareBtn .wx-button-cover-view-inner {
+
+    height: auto;
+
+    overflow: auto;
+
+}
+
+.bottom {
+
+    width: 100%;
+
+    position: absolute;
+
+    bottom: 0rpx;
+
+    background: rgba(0, 0, 0, 1);
+
+    height: 80rpx;
+
+    /* border-top: 1rpx solid rgba(241, 241, 241,0.4); */
+
+}
+
+.bottomBorder {
+
+    clear: both;
+
+    border-top: 2rpx solid rgba(241, 241, 241, 0.4);
+
+}
+
+.videoOut {
+
+    position: fixed;
+
+    top: 0rpx;
+
+    left: 0rpx;
+
+    height: 100%;
+
+    width: 100%;
+
+}
+
+.bottom .space {
+
+    width: 2rpx;
+
+    background: rgba(241, 241, 241, 0.4);
+
+    height: 30rpx;
+
+    position: absolute;
+
+    margin-top: 22rpx;
+
+    margin-left: 50%;
+
+}
+
+.middle {
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #000;
+
+}
+
+.videoBox {
+
+    background: #000;
+
+}
+
+.mask {
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.8);
+
+    position: fixed;
+
+    z-index: 999;
+
+    top: 0rpx;
+
+}
+
+.tipTop {
+
+    width: 238rpx;
+
+    height: 225rpx;
+
+    position: absolute;
+
+    top: 43rpx;
+
+    left: 99rpx;
+
+}
+
+.tipBottom {
+
+    width: 560rpx;
+
+    height: 317rpx;
+
+    position: absolute;
+
+    bottom: 513rpx;
+
+    left: 50%;
+
+    margin-left: -280rpx;
+
+}
+
+.videoBtn {
+
+    width: 100%;
+
+    height: 200rpx;
+
+    position: fixed;
+
+    top: 615rpx;
+
+    z-index: 999;
+
+}
+
+.videoBtnIcon {
+
+    width: 120rpx;
+
+    height: 100rpx;
+
+    display: block;
+
+    margin: 0 auto;
+
+}
+
+.vProgress {
+
+    height: 2rpx;
+
+    background: red;
+
+}

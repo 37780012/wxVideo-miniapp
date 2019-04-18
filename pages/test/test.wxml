@@ -1,0 +1,84 @@
+<!-- start 视频区域 -->
+<view class='middle' bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend">
+  <view class='videoBox' style='height:100%;width:100%'>
+    <video style='height:100%;width:100%' src="{{curvideo||videoUrl}}" controls='false' autoplay="true" id='video0' loop="true" bindtap='pauseVideo' bindtimeupdate="videoProgress">
+      <!-- start 导航部分 -->
+      <cover-view class='navBtns'>
+        <block wx:for="{{typeList}}" wx:for-item="item" wx:for-index="index">
+          <cover-view class='{{index==typeChooseIndex?"active":""}} typeButton' data-index='{{index}}' catchtap='styleClick'>
+            {{item.name}}
+          </cover-view>
+        </block>
+        <cover-view class='colorBtns'>
+          <block wx:for="{{colorList}}" wx:for-item="item" wx:for-index="index">
+            <cover-view class='{{index==colorChooseIndex?"active":""}} colorbutton' data-index="{{index}}" catchtap='colorClick'>
+              {{item.colorName}}
+            </cover-view>
+          </block>
+        </cover-view>
+      </cover-view>
+      <!-- end 导航部分 -->
+      <!-- start 详情区 -->
+      <cover-view class='detail'>
+        <!-- start 左侧详情区 -->
+        <cover-view class='detailLeft'>
+          <cover-view class='catCon'>
+            <cover-view>#品种：{{curCat.typeName}}</cover-view>
+            <cover-view>#颜色：{{curCat.colorName}}</cover-view>
+          </cover-view>
+          <block wx:if="{{curCat.saleStatus==1}}">
+            <button class='reserve' data-catid="{{curCat.id}}" catchtap='goreserve'>继续支付</button>
+          </block>
+          <block wx:if="{{curCat.saleStatus==2}}">
+            <button class='reserve' data-catid="{{curCat.id}}" catchtap='goreserve'>立即预订</button>
+          </block>
+          <block wx:else>
+            <button class='sold'>已出售</button>
+          </block>
+        </cover-view>
+        <!-- end 左侧详情区 -->
+        <!-- start 右侧love分享区 -->
+        <cover-view class='detailRight'>
+          <cover-view class='detailRightCon'>
+            <cover-view class='loveCon {{curCat.likeStatus==1?"active":""}}' catchtap='likeEnt'>
+              <!-- 点击喜欢 active -->
+              <cover-image src='../images/love1.png'></cover-image>
+              <cover-image src='../images/love2.png'></cover-image>
+            </cover-view>
+            <cover-view class='loveNum'>{{curCat.likeNum}}</cover-view>
+            <cover-view class='shareCon'>
+              <cover-image src='../images/shareIcon.png'></cover-image>
+              <button open-type='share' title="袖虎宠物" class='shareBtn'>转发</button>
+            </cover-view>
+            <cover-view class='shareNum'>{{curCat.shareNum}}</cover-view>
+          </cover-view>
+        </cover-view>
+        <!-- end 右侧love分享区 -->
+        <!-- start 底部导航 -->
+        <cover-view class='bottom clear' catchtap=''>
+          <cover-view class='vProgress' style='width:{{vProgress}}%'></cover-view>
+          <cover-view class='bottomBorder'></cover-view>
+          <button class='active'>首页</button>
+          <cover-view class='space'></cover-view>
+          <button open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo" catchtap='goCenter'>
+            我的
+          </button>
+        </cover-view>
+        <!-- end 底部导航 -->
+      </cover-view>
+      <!-- end 详情区 -->
+      <!-- start 操作提示 -->
+      <cover-view class='mask {{maskStatus}}' catchtap='closeMask'>
+        <cover-image src='../images/type2.png' class='tipTop'></cover-image>
+        <cover-image src='../images/up2.png' class='tipBottom'></cover-image>
+      </cover-view>
+      <!-- start 操作提示 -->
+      <!-- start 视频播放按钮 -->
+      <cover-view class='videoBtn {{videoBtnStatus}}' catchtap='playVideo'>
+        <cover-image src='../images/pause.png' class='videoBtnIcon'></cover-image>
+      </cover-view>
+      <!-- end 视频播放按钮 -->
+    </video>
+  </view>
+</view>
+<!-- end 视频区域 -->

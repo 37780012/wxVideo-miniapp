@@ -1,0 +1,64 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"enablePullDownRefresh": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.5",
+	"appid": "wx85773d17c3358f42",
+	"projectname": "%E5%BE%AE%E8%AF%B4%E8%AF%B4M",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 3,
+			"list": [
+				{
+					"id": -1,
+					"name": "新版首页",
+					"pathName": "pages/douyin/index",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "老版首页",
+					"pathName": "pages/douyin/subject",
+					"query": "subjectId=100"
+				},
+				{
+					"id": -1,
+					"name": "我",
+					"pathName": "pages/douyin/me",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "test",
+					"pathName": "pages/test/test",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

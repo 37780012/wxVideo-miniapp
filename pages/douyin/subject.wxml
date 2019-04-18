@@ -1,0 +1,94 @@
+<!-- 轮播图片 -->
+<swiper duration="{{duration}}" vertical="true" bindchange="bindSwiperChange" current="{{current}}" class='swiper'>
+  <block wx:for="{{subjectList}}" wx:key="*this">
+    <swiper-item>
+      <image src="{{item.coverUrl}}" mode='aspectFill' class="slide-image" bindtap='previewSubject' />
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 播放提示按钮 -->
+<view class='play-box' wx:if="{{subject.type == 'video'}}">
+  <image src="/image/play.png" mode='aspectFill' class="icon-play" bindtap='previewSubject' />
+</view>
+
+<!-- 操作按钮 -->
+<view class="tools">
+  <view>
+    <image class="userinfo-avatar" src="{{subject.avatarUrl}}" bindtap='showAvatar'></image>
+  </view>
+  <view>
+    <image wx:if="{{subject.like}}" class="icon right-icon" src='/image/like_red.png' bindtap='like'>喜欢</image>
+    <image wx:if="{{!subject.like}}" class="icon right-icon" src='/image/like.png' bindtap='like'>喜欢</image>
+    <view class="text" bindtap='like'>{{subject.likes}}</view>
+  </view>
+  <view>
+    <image class="icon right-icon" src='/image/talk.png' bindtap='talk'>评论</image>
+    <view class="text" bindtap='apply'>{{subject.talks}}</view>
+  </view>
+  <view>
+    <image class="icon right-icon" src='/image/share.png' bindtap='share'>分享</image>
+    <view class="text">{{subject.shares}}</view>
+  </view>
+</view>
+
+<!-- 刷新 -->
+<view class="reload">
+  <view>
+    <image class="icon" src='/image/reload.png' bindtap='reload'></image>
+  </view>
+</view>
+
+<!-- 描述 -->
+<view class="desc">
+  <view>
+    <text class="desc-text">{{subject.title}}</text>
+  </view>
+</view>
+
+<!-- 发布 -->
+<view class="footer">
+  <view class='apply'>
+    <image class="icon" src='/image/add.png' bindtap='apply'></image>
+  </view>
+</view>
+
+<!-- 评论 -->
+<view class='talks-layer' animation='{{talksAnimationData}}'>
+  <view class='layer-white-space' bindtap='hideTalks'>
+  </view>
+  <view class='talks'>
+    <view class='talk-header'>
+      <view class='talk-count'>{{subject.talks}} 条评论</view>
+      <image src='/image/close.png' class='talk-close' bindtap='hideTalks'></image>
+    </view>
+
+    <scroll-view class='talk-body' scroll-y="true" bindscrolltolower="onScrollLoad">
+      <view class='talk-item' wx:for="{{talks}}" wx:key="*this">
+        <view class='talk-item-left'>
+          <image class='talk-item-face' src='{{item.avatarUrl}}'></image>
+        </view>
+        <view class='talk-item-right'>
+          <text class='talk-item-nickname'>{{item.nickName}}</text>
+          <text class='talk-item-content'>{{item.content}}</text>
+          <text class='talk-item-time'>{{item.talkTime}}</text>
+        </view>
+      </view>
+    </scroll-view>
+
+    <view class='talk-footer'>
+      <input class='talk-input' type='text' bindinput='talkInput' bindconfirm='talkConfirm' placeholder='有爱评论，说点儿好听的~' value='{{inputTalk}}'></input>
+    </view>
+  </view>
+</view>
+
+<!-- 视频层  -->
+<view class="videoLayer" hidden='{{!!!videoSrc}}'>
+  <video id="myVideo" src="{{videoSrc}}" binderror="videoErrorCallback" autoplay='{{true}}' controls='{{false}}' class='slide-image' loop='true' show-progress='false' show-play-btn='false' show-center-play-btn='true' show-fullscreen-btn='false' objectFit='fill' enable-danmu>
+    <cover-view class='controls' bindtap="bindSwitchControls">
+      <cover-view class="icon-box" hidden='{{isHiddenControls}}'>
+        <cover-image class='icon-pause' src="/image/pause.png" bindtap="hidePreview" />
+      </cover-view>
+    </cover-view>
+  </video>
+</view>
